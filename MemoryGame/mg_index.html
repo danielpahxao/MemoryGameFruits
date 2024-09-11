@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da memória</title>
     <link rel="stylesheet" href="mg_style.css">
-    <script src="mg_script.js"></script>
+    <script src="mg_script.js" defer></script>
 </head>
 <body>
-    <div class="all-content">
+    <header id="menu">
+        <h1>Jogo da Memória</h1>
+        <h2>Escolha o modo de jogo</h2>
+        <div class="mode-conteiner">
+            <div class="mode" onclick="startGame()">6 Cartas</div>
+            <div class="mode mode2" function="gameStart(12)">12 Cartas</div>
+            <div class="mode mode3" function="gameStart(20)">20 Cartas</div>
+            <div class="mode mode4" function="gameStart(26)">26 Cartas</div>
+            <div class="mode mode5" function="gameStart(30)">30 Cartas</div>
+            <div class="mode mode6" function="gameStart(36)">36 Cartas</div>
+        </div>
+    </header>
+    <div class="game-board">
         
-    </div>
+    </div>   
 </body>
 </html>
