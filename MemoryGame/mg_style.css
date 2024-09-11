@@ -6,11 +6,14 @@
 
 body {
     display: flex;
-    width: 100%;
+    position: relative; 
+    width: 100%;  
+    min-width: 310px;
     height: 100vh;
     background: url("assets/back.jpg") no-repeat;
     background-size: cover;
     justify-content: center;
+	align-items: center;
 }
 
 body header {
@@ -23,7 +26,6 @@ body header {
     z-index: 10;
     visibility: visible;
     opacity: 1;
-    transition: 0.7s;
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(6px);
@@ -39,13 +41,12 @@ header .mode-conteiner {
     gap: 6px;
     padding-top: 20px;
     height: 100px;
-    justify-content:space-around; 
-    
+    justify-content:space-around;     
 }
 header .mode-conteiner .mode {
     position: relative;
     width: 120px;
-    height: 36px;
+    height: 30px;
     border: 1px solid lightcoral;
     padding: 4px;
     text-align: center;
@@ -61,6 +62,32 @@ header .mode-conteiner .mode:hover {
 } 
 
 body .game-board {
-    position: relative;
-    width: 90%;
+    display: grid;
+    width: 100%;
+    min-width: 315px;
+    border: 1px solid;
+    border-radius: 6px;
+    gap: 2px;
+    justify-content: center;
+	align-items: center;
+    backdrop-filter: blur(10px);
+}
+body .game-board .card {
+    width: 50px;
+    height: 70px;
+    border: 1px solid rgb(30, 146, 150);
+    border-radius: 6px;
+    background: url("assets/cback.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;        
+}
+.card:hover {
+    box-shadow: 3px 3px 3px hsla(197, 40%, 55%, 0.4);
+    cursor: grab;
+}
+
+.game-board #unusable {
+    filter: sepia(100%);
+    opacity: 0.4;
+    transition: 0.8s;
 }
