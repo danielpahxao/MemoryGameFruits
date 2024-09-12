@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -32,8 +33,11 @@ body header {
     backdrop-filter: blur(6px);
     z-index: 10;
 }
+header img {
+    width: 500px;
+}
 header h1{
-    margin-top: -90px;
+    
 }
 header .mode-conteiner {
     position: relative;
@@ -128,7 +132,9 @@ body main {
     backdrop-filter: blur(16px);
     z-index: 20;
 }
-
+main img {
+    width: 310px;
+}
 main .btn-menu {
     position: relative;
     width: 120px;
@@ -148,3 +154,12 @@ main .btn-menu {
 main .btn-menu:hover {
     border-color: bisque;
 } 
+
+@media (max-width: 420px) {
+    header img {
+        width: 300px;
+    }
+    header h1 {
+        font-size: 0.9rem;        
+    }
+}
