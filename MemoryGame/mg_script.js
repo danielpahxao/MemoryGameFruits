@@ -43,6 +43,10 @@ function startGame(value) {
         card.addEventListener("click", function() { showCard(i, cards[i]) });        
     } 
 // End of drawing the board
+
+    interval = 1;
+    timeCount = 0;
+    points(0);
 };
 
 function showCard(pos, image) {  
@@ -62,8 +66,7 @@ function showCard(pos, image) {
         secondCard[1] = image;
     
         checkVictory();
-    }
-    
+    }    
 }
 
 function checkVictory() {
@@ -72,10 +75,21 @@ function checkVictory() {
         document.getElementById("card"+fisrtCard[0]).setAttribute("id", "unusable");   
         document.getElementById("card"+secondCard[0]).setAttribute("id", "unusable");
         resetLoop();
+
+        points(1);
         if(controlVictory == 0) {
+            totalScore += gamePoints;
+            document.getElementById("end-points").innerText="Pontos: "+gamePoints;
+            document.getElementById("total-score").innerText="Total: "+totalScore;
+            document.getElementById("end-game-time").innerHTML = "Tempo: "+document.getElementById("game-time").innerHTML;  
+
             document.getElementById("end-game").style.visibility = "visible";
-            document.getElementById("end-game").style.opacity = "1";             
+            document.getElementById("end-game").style.opacity = "1";
+            interval = 0;
+            timeCount = 0;           
         }
+    }else {
+        points(-1);
     }   
 }
 
@@ -103,3 +117,38 @@ function restartGame() {
     document.getElementById("menu").style.opacity = "1"; 
 }
 btnMenu.addEventListener("click", restartGame);
+
+
+// Count time
+let interval = 0;
+let timeCount = 0;
+function gameTimer() {
+	setInterval(()=>{			
+		timeCount += interval;
+		updateTime();			
+	}, 1000);   
+}
+
+const time = document.getElementById("game-time");
+function updateTime() {
+    
+  let seconds = timeCount%60;
+	let minutes = Math.floor(timeCount/60);	
+	let timeFormated = minutes.toString().padStart(2, "0") + ":"+ seconds.toString().padStart(2, "0");
+
+	document.getElementById("game-time").innerHTML = timeFormated;
+}
+gameTimer();
+
+let gamePoints = 10;
+let totalScore = 0;
+function points(value) {
+	if(value == 0) {
+        gamePoints = Math.ceil(Math.sqrt(gameSize)) * gameSize/2;
+	}else if(value == 1){
+	    gamePoints += Math.ceil(Math.sqrt(gameSize)) * gameSize/2;
+	} else {
+	    gamePoints -= Math.ceil(Math.sqrt(gameSize));
+	}
+	document.getElementById("points").innerText = gamePoints;
+}
