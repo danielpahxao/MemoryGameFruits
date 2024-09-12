@@ -12,15 +12,21 @@
         <h1>Jogo da Memória</h1>
         <h2>Escolha o modo de jogo</h2>
         <div class="mode-conteiner">
-            <div class="mode" onclick="startGame(6)">6 Cartas</div>
-            <div class="mode" onclick="startGame(12)">12 Cartas</div>
-            <div class="mode" onclick="startGame(20)">20 Cartas</div>
-            <div class="mode" onclick="startGame(26)">26 Cartas</div>
-            <div class="mode" onclick="startGame(30)">30 Cartas</div>
-            <div class="mode" onclick="startGame(36)">36 Cartas</div>
+            <div class="btn-mode" onclick="startGame(6)">6 Cartas</div>
+            <div class="btn-mode" onclick="startGame(12)">12 Cartas</div>
+            <div class="btn-mode" onclick="startGame(20)">20 Cartas</div>
+            <div class="btn-mode" onclick="startGame(26)">26 Cartas</div>
+            <div class="btn-mode" onclick="startGame(30)">30 Cartas</div>
+            <div class="btn-mode" onclick="startGame(36)">36 Cartas</div>
         </div>
     </header>
 
+    <main id="end-game">
+        <h1>Memória afiada!</h1>
+        <h2 id="points">10</h2>
+        <h2 id="tempo">02:20</h2>
+        <div id="btn-menu" class="btn-menu">Novo Jogo</div>
+    </main>
    
     <div class="game-board" id="board"> </div>    
 </body>

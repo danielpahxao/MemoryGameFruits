@@ -22,8 +22,7 @@ body header {
     position: fixed;
     width: 100%;
     min-width: 290px;
-    height: 100%;    
-    z-index: 10;
+    height: 100%; 
     visibility: visible;
     opacity: 1;
     justify-content: center;
@@ -43,7 +42,7 @@ header .mode-conteiner {
     height: 100px;
     justify-content:space-around;     
 }
-header .mode-conteiner .mode {
+header .mode-conteiner .btn-mode {
     position: relative;
     width: 120px;
     height: 30px;
@@ -57,7 +56,7 @@ header .mode-conteiner .mode {
     box-shadow: 3px 3px 3px hsla(0, 0%, 0%, 0.4);
     cursor: pointer;
 }
-header .mode-conteiner .mode:hover {
+header .mode-conteiner .btn-mode:hover {
     border-color: bisque;
 } 
 
@@ -91,3 +90,37 @@ body .game-board .card {
     opacity: 0.4;
     transition: 0.8s;
 }
+
+body main {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    min-width: 290px;
+    height: 100%; 
+    visibility: hidden;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(6px);
+    z-index: 20;
+}
+
+main .btn-menu {
+    position: relative;
+    width: 120px;
+    height: 30px;
+    border: 1px solid lightcoral;
+    padding: 4px;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: orange;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px hsla(0, 0%, 0%, 0.4);
+    cursor: pointer;
+    transition: 0.6s;
+}
+main .btn-menu:hover {
+    border-color: bisque;
+} 
