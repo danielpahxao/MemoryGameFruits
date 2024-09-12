@@ -18,7 +18,7 @@ function startGame(value) {
     }
 // end of cleaning
 // Draw the board accordinly the number of cards.
-    board.style.gridTemplateColumns = "repeat("+Math.ceil(Math.sqrt(value))+", 50px)";
+    board.style.gridTemplateColumns = "repeat("+Math.ceil(Math.sqrt(value))+", 42px)";
     controlVictory = gameSize = value;
 
 // Use differente cards per game. *Caution with the number 20, if the game assets has less, so change it.    
@@ -81,7 +81,7 @@ function checkVictory() {
             totalScore += gamePoints;
             document.getElementById("end-points").innerText="Pontos: "+gamePoints;
             document.getElementById("total-score").innerText="Total: "+totalScore;
-            document.getElementById("end-game-time").innerHTML = "Tempo: "+document.getElementById("game-time").innerHTML;  
+            document.getElementById("end-game-time").innerText = document.getElementById("game-time").innerHTML;  
 
             document.getElementById("end-game").style.visibility = "visible";
             document.getElementById("end-game").style.opacity = "1";
@@ -136,7 +136,7 @@ function updateTime() {
 	let minutes = Math.floor(timeCount/60);	
 	let timeFormated = minutes.toString().padStart(2, "0") + ":"+ seconds.toString().padStart(2, "0");
 
-	document.getElementById("game-time").innerHTML = timeFormated;
+	document.getElementById("game-time").innerHTML = "Tempo: "+timeFormated;
 }
 gameTimer();
 
@@ -150,5 +150,5 @@ function points(value) {
 	} else {
 	    gamePoints -= Math.ceil(Math.sqrt(gameSize));
 	}
-	document.getElementById("points").innerText = gamePoints;
+	document.getElementById("points").innerText = "Pontos: "+gamePoints;
 }
